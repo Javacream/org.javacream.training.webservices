@@ -1,6 +1,5 @@
 package org.javacream.training.webservices.jaxws.postalcodes;
 
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
