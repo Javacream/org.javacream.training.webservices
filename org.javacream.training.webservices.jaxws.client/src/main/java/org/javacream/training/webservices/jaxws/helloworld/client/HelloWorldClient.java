@@ -1,4 +1,5 @@
-package org.javacream.training.webservices.jaxws.client;
+package org.javacream.training.webservices.jaxws.helloworld.client;
+
 
 public class HelloWorldClient {
 
@@ -6,6 +7,8 @@ public class HelloWorldClient {
 		HelloWorldWebService service = new HelloWorldWebServiceService().getHelloWorldWebServicePort();
 		String message = service.sayHello();
 		System.out.println(message);
+		String greeting = service.greet("Sawitzki");
+		System.out.println(greeting);
 	}
 
 }
