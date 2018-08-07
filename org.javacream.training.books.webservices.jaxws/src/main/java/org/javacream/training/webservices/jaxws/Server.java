@@ -8,6 +8,7 @@ public class Server {
 		System.out.println("Starting services...");
 		Endpoint.publish("http://localhost:8888/isbnGenerator", WebServiceContext.getIsbnGeneratorWebService());
 		Endpoint.publish("http://localhost:8888/storeService", WebServiceContext.getStoreWebService());
+		Endpoint.publish("http://localhost:8888/booksService", WebServiceContext.getBooksWebService());
 		System.out.println("Starting services done!");
 	}
 
