@@ -1,11 +1,11 @@
 package org.javacream.training.books.webservices.jaxws;
 
-import org.javacream.books.warehouse.BookException;
-import org.javacream.books.warehouse.BooksService;
-import org.javacream.books.warehouse.value.Book;
-import org.javacream.isbngenerator.IsbnGenerator;
-import org.javacream.store.StoreService;
-import org.javacream.util.Context;
+import org.javacream.application.Context;
+import org.javacream.books.isbngenerator.api.IsbnGenerator;
+import org.javacream.books.warehouse.api.Book;
+import org.javacream.books.warehouse.api.BookException;
+import org.javacream.books.warehouse.api.BooksService;
+import org.javacream.store.api.StoreService;
 
 public class BooksDemoApplication {
 
@@ -21,7 +21,7 @@ public class BooksDemoApplication {
 			System.out.println(storeService.getStock("books", "EGAL"));
 			
 			//..
-			IsbnGenerator isbnGenerator = Context.getKeyGenerator();
+			IsbnGenerator isbnGenerator = Context.getIsbnGenerator();
 			System.out.println(isbnGenerator.next());
 		} catch (BookException e) {
 			// TODO Auto-generated catch block

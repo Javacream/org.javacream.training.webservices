@@ -4,11 +4,9 @@
  * To change the template for this generated file go to
  * Window>Preferences>Java>Code Generation>Code and Comments
  */
-package org.javacream.books.warehouse;
+package org.javacream.books.warehouse.api;
 
 import java.util.Collection;
-
-import org.javacream.books.warehouse.value.Book;
 
 /**
  * 

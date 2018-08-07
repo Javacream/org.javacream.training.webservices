@@ -1,4 +1,4 @@
-package org.javacream.books.warehouse.business;
+package org.javacream.books.warehouse.impl;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -7,12 +7,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.javacream.books.warehouse.BookException;
-import org.javacream.books.warehouse.BooksService;
-import org.javacream.books.warehouse.BookException.BookExceptionType;
-import org.javacream.books.warehouse.value.Book;
-import org.javacream.isbngenerator.IsbnGenerator;
-import org.javacream.store.StoreService;
+import org.javacream.books.isbngenerator.api.IsbnGenerator;
+import org.javacream.books.warehouse.api.Book;
+import org.javacream.books.warehouse.api.BookException;
+import org.javacream.books.warehouse.api.BooksService;
+import org.javacream.books.warehouse.api.BookException.BookExceptionType;
+import org.javacream.store.api.StoreService;
 
 /**
  * @author Dr. Rainer Sawitzki

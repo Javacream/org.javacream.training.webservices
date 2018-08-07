@@ -1,6 +1,6 @@
-package org.javacream.store.business;
+package org.javacream.store.impl;
 
-import org.javacream.store.StoreService;
+import org.javacream.store.api.StoreService;
 
 public class StoreServiceImpl implements StoreService{
 

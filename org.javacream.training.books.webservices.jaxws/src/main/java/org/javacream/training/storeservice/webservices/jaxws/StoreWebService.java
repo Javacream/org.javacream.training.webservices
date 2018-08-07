@@ -5,7 +5,7 @@ import javax.jws.WebParam;
 import javax.jws.WebResult;
 import javax.jws.WebService;
 
-import org.javacream.store.StoreService;
+import org.javacream.store.api.StoreService;
 
 @WebService
 public class StoreWebService {

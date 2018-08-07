@@ -1,8 +1,8 @@
-package org.javacream.isbngenerator.business;
+package org.javacream.books.isbngenerator.impl;
 
 import java.util.Random;
 
-import org.javacream.isbngenerator.IsbnGenerator;
+import org.javacream.books.isbngenerator.api.IsbnGenerator;
 
 public class RandomIsbnGenerator implements IsbnGenerator {
 

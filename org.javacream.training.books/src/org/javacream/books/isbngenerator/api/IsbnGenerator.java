@@ -1,4 +1,4 @@
-package org.javacream.isbngenerator;
+package org.javacream.books.isbngenerator.api;
 
 
 public interface IsbnGenerator {

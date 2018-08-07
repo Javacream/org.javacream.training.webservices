@@ -2,20 +2,14 @@ package org.javacream.training.books.webservices.jaxws;
 
 import javax.xml.ws.Endpoint;
 
-import org.javacream.training.isbngenerator.webservices.jaxws.IsbnGeneratorWebService;
-import org.javacream.training.storeservice.webservices.jaxws.StoreWebService;
-import org.javacream.util.Context;
+import org.javacream.training.webservices.jaxws.WebServiceContext;
 
 public class Server {
 
 	public static void main(String[] args) {
 		System.out.println("Starting services...");
-		IsbnGeneratorWebService isbnGeneratorWebService = new IsbnGeneratorWebService();
-		isbnGeneratorWebService.setIsbnGenerator(Context.getKeyGenerator());
-		StoreWebService storeWebService = new StoreWebService();
-		storeWebService.setStoreService(Context.getStoreService());
-		Endpoint.publish("http://localhost:8888/isbnGenerator", isbnGeneratorWebService);
-		Endpoint.publish("http://localhost:8888/storeService", storeWebService);
+		Endpoint.publish("http://localhost:8888/isbnGenerator", WebServiceContext.getIsbnGeneratorWebService());
+		Endpoint.publish("http://localhost:8888/storeService", WebServiceContext.getStoreWebService());
 		System.out.println("Starting services done!");
 	}
 

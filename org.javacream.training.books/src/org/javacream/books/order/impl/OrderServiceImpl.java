@@ -1,11 +1,11 @@
-package org.javacream.books.order.business;
+package org.javacream.books.order.impl;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import org.javacream.books.order.OrderService;
-import org.javacream.books.order.OrderValue;
+import org.javacream.books.order.api.OrderService;
+import org.javacream.books.order.api.OrderValue;
 public class OrderServiceImpl implements OrderService{
 
 	private Random random;

@@ -1,4 +1,4 @@
-package org.javacream.books.order;
+package org.javacream.books.order.api;
 
 import java.io.Serializable;
 

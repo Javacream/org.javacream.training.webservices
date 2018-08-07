@@ -4,7 +4,7 @@ import javax.jws.WebMethod;
 import javax.jws.WebResult;
 import javax.jws.WebService;
 
-import org.javacream.isbngenerator.IsbnGenerator;
+import org.javacream.books.isbngenerator.api.IsbnGenerator;
 
 @WebService
 public class IsbnGeneratorWebService{// implements IsbnGenerator{

@@ -1,32 +1,50 @@
-package org.javacream.util;
+package org.javacream.application;
 
-import org.javacream.books.order.OrderService;
-import org.javacream.books.order.business.OrderServiceImpl;
-import org.javacream.books.warehouse.BooksService;
-import org.javacream.books.warehouse.business.MapBooksService;
-import org.javacream.isbngenerator.IsbnGenerator;
-import org.javacream.isbngenerator.business.RandomIsbnGenerator;
-import org.javacream.store.StoreService;
-import org.javacream.store.business.StoreServiceImpl;
+import org.javacream.books.isbngenerator.api.IsbnGenerator;
+import org.javacream.books.isbngenerator.impl.RandomIsbnGenerator;
+import org.javacream.books.order.api.OrderService;
+import org.javacream.books.order.impl.OrderServiceImpl;
+import org.javacream.books.warehouse.api.BooksService;
+import org.javacream.books.warehouse.impl.MapBooksService;
+import org.javacream.store.api.StoreService;
+import org.javacream.store.impl.StoreServiceImpl;
 
 public abstract class Context {
-	public static BooksService getBooksService(){
+	private static BooksService booksService;
+	private static IsbnGenerator isbnGenerator;
+	private static StoreService storeService;
+	private static OrderService orderService;
+	
+	static {
 		MapBooksService mapBooksService = new MapBooksService();
-		mapBooksService.setIsbnGenerator(getKeyGenerator());
-		mapBooksService.setStoreService(getStoreService());
-		return mapBooksService;
-	}
-	public static IsbnGenerator getKeyGenerator(){
-		RandomIsbnGenerator randomKeyGenerator = new RandomIsbnGenerator();
-		randomKeyGenerator.setPrefix("Integrata:");
-		randomKeyGenerator.setSuffix("-de");
-		return randomKeyGenerator;
+		RandomIsbnGenerator randomIsbnGenerator = new RandomIsbnGenerator();
+		StoreServiceImpl storeServiceImpl = new StoreServiceImpl();
+		OrderServiceImpl orderServiceImpl = new OrderServiceImpl();
+
+		mapBooksService.setIsbnGenerator(randomIsbnGenerator);
+		mapBooksService.setStoreService(storeServiceImpl);
+		randomIsbnGenerator.setPrefix("ISBN:");
+		randomIsbnGenerator.setSuffix("-de");
 		
+		booksService = mapBooksService;
+		isbnGenerator = randomIsbnGenerator;
+		storeService = storeServiceImpl;
+		orderService = orderServiceImpl;
 	}
-	public static StoreService getStoreService(){
-		return new StoreServiceImpl();
+
+	public static BooksService getBooksService() {
+		return booksService;
 	}
-	public static OrderService getOrderService(){
-		return new OrderServiceImpl();
+
+	public static IsbnGenerator getIsbnGenerator() {
+		return isbnGenerator;
+	}
+
+	public static StoreService getStoreService() {
+		return storeService;
+	}
+
+	public static OrderService getOrderService() {
+		return orderService;
 	}
 }
