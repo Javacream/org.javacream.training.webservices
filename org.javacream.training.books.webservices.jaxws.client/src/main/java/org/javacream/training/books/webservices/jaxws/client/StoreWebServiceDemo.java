@@ -21,8 +21,6 @@ public class StoreWebServiceDemo {
 		}
 		storeWebService.getStock("books", isbns);
 		System.out.println("Retrieving 100 stocks took " + (System.currentTimeMillis() - start));
-		
-	
 	}
 
 }
