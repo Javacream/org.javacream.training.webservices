@@ -7,7 +7,7 @@ public class IsbnGeneratorDemo {
 
 	public static void main(String[] args) {
 		IsbnGeneratorWebService service = new IsbnGeneratorWebServiceService().getIsbnGeneratorWebServicePort();
-		System.out.println(service.next());
+		System.out.println(service.next(10));
 	
 	}
 
