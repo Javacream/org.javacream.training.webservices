@@ -1,4 +1,4 @@
-package org.javacream.training.books.webservices.jaxws;
+package org.javacream.training.books.application;
 
 import org.javacream.application.Context;
 import org.javacream.books.isbngenerator.api.IsbnGenerator;

@@ -1,7 +1,7 @@
 package org.javacream.training.webservices.jaxws;
 
 import org.javacream.application.Context;
-import org.javacream.training.isbngenerator.webservices.jaxws.IsbnGeneratorWebService;
+import org.javacream.training.books.isbngenerator.webservices.jaxws.IsbnGeneratorWebService;
 import org.javacream.training.storeservice.webservices.jaxws.StoreWebService;
 
 public abstract class WebServiceContext {

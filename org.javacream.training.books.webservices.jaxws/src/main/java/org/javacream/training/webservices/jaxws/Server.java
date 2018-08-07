@@ -1,8 +1,6 @@
-package org.javacream.training.books.webservices.jaxws;
+package org.javacream.training.webservices.jaxws;
 
 import javax.xml.ws.Endpoint;
-
-import org.javacream.training.webservices.jaxws.WebServiceContext;
 
 public class Server {
 

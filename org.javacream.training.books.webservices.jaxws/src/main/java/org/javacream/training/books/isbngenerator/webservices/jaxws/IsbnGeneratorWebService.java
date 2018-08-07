@@ -1,4 +1,4 @@
-package org.javacream.training.isbngenerator.webservices.jaxws;
+package org.javacream.training.books.isbngenerator.webservices.jaxws;
 
 import javax.jws.WebMethod;
 import javax.jws.WebResult;
