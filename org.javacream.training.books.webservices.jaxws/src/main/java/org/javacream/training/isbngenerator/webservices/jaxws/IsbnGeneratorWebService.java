@@ -12,6 +12,7 @@ public class IsbnGeneratorWebService{// implements IsbnGenerator{
 	
 	private IsbnGenerator isbnGenerator;
 
+	@WebMethod(exclude=true)
 	public void setIsbnGenerator(IsbnGenerator isbnGenerator) {
 		this.isbnGenerator = isbnGenerator;
 	}
