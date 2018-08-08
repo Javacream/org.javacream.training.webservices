@@ -30,4 +30,9 @@ public class WebEcho {
 		System.out.println("echoing " + message);
 		return new StringBuilder(message).reverse().toString();
 	}
+	
+	@GET @Path("data") @Produces(MediaType.APPLICATION_JSON)
+	public WebData getData() {
+		return new WebData("Hello", 42);
+	}
 }
