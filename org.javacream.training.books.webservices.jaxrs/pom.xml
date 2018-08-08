@@ -50,7 +50,7 @@
 						<phase>install</phase>
 						<configuration>
 							<tasks>
-								<copy file="${project.build.directory}/primefaces.war"
+								<copy file="${project.build.directory}/jee.war"
 									todir="/home/rainer/tools/wildfly-13.0.0.Final/standalone/deployments" />
 							</tasks>
 						</configuration>
