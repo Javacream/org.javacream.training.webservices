@@ -12,7 +12,6 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
 
 import org.javacream.application.Context;
 import org.javacream.books.warehouse.api.Book;
@@ -24,7 +23,7 @@ public class BooksRestService {
 	private BooksService booksService = Context.getBooksService();
 	
 	
-	@GET @Path("{isbn}") @Produces(MediaType.TEXT_PLAIN)
+	@GET @Path("{isbn}") @Produces({MediaType.TEXT_PLAIN, "text/simple"})
 	public Book findBookByIsbn(@PathParam ("isbn")String isbn){
 		try{
 			return booksService.findBookByIsbn(isbn);

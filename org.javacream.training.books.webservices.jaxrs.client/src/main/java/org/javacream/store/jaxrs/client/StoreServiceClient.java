@@ -1,4 +1,4 @@
-package org.javacream.books.store.jaxrs.client;
+package org.javacream.store.jaxrs.client;
 
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
