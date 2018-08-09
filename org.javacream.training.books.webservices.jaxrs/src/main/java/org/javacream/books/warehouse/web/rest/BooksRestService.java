@@ -69,10 +69,10 @@ public class BooksRestService {
 		}
 	}
 
-	@PUT @Path("{isbn}") @Consumes(MediaType.APPLICATION_JSON)
-	public void updateBook(Book toUpdate){
+	@PUT @Consumes(MediaType.APPLICATION_JSON) @Produces(MediaType.APPLICATION_JSON)
+	public Book updateBook(Book toUpdate){
 		try{
-			booksService.updateBook(toUpdate);
+			return booksService.updateBook(toUpdate);
 		}
 		catch(BookException be){
 			throw new RuntimeException(be);
