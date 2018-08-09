@@ -19,7 +19,7 @@ public class BooksRestClient {
 				.get(String.class);	
 		System.out.println(simple);
 
-		book.setTitle("Changed Again");
+		book.setTitle("CHANGED");
 		Book book2 = client.target("http://localhost:8080/jee/rest").path("books").request(MediaType.APPLICATION_JSON)
 				.put(Entity.json(book), Book.class);
 		System.out.println(book2);
