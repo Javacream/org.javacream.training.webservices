@@ -2,7 +2,7 @@
 curl -X POST -H "Accept: *" -verbose http://localnost:8080/books/isbn
 
 
-#StoreService
+# StoreService
 curl -X POST -H "stock: 10" http://localhost:8080/store/books/ISBN1
 curl -X POST -H "stock: 42" http://localhost:8080/store/books/ISBN2
 curl -X POST -H "stock: 1" http://localhost:8080/store/dvd/StarTrek
@@ -16,3 +16,13 @@ curl -X GET -H "category: dvd" -H "itemId: StarTrek" "http://localhost:8080/stor
 curl -X DELETE http://localhost:8080/store/dvd/StarTrek
 curl -X DELETE http://localhost:8080/store/books
 curl -X DELETE http://localhost:8080/store
+
+# Books
+
+curl -X POST http://localhost:8080/books/Spring
+curl -X POST http://localhost:8080/books/JEE
+
+curl -X GET http://localhost:8080/books
+curl -X DELETE http://localhost:8080/books/ISBN1
+
+curl -X PUT -H "Content-Type: application/json" -d@update.json http://localhost:8080/books/ISBN2
