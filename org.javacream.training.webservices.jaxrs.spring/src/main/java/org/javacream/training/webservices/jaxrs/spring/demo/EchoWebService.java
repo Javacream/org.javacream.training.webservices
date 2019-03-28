@@ -11,6 +11,6 @@ public class EchoWebService {
 
 	@GET @Path("ping")
 	public String ping() {
-		return "pong";
+		return "peng";
 	}
 }
