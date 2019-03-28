@@ -1,0 +1,18 @@
+# IsbnGenerator
+curl -X POST -H "Accept: *" -verbose http://localnost:8080/books/isbn
+
+
+#StoreService
+curl -X POST -H "stock: 10" http://localhost:8080/store/books/ISBN1
+curl -X POST -H "stock: 42" http://localhost:8080/store/books/ISBN2
+curl -X POST -H "stock: 1" http://localhost:8080/store/dvd/StarTrek
+
+
+curl -X GET http://localhost:8080/store/books/ISBN1
+curl -X GET http://localhost:8080/store/dvd/StarTrek
+curl -X GET "http://localhost:8080/store/query?category=dvd&itemId=StarTrek"
+curl -X GET -H "category: dvd" -H "itemId: StarTrek" "http://localhost:8080/store/header"
+
+curl -X DELETE http://localhost:8080/store/dvd/StarTrek
+curl -X DELETE http://localhost:8080/store/books
+curl -X DELETE http://localhost:8080/store
