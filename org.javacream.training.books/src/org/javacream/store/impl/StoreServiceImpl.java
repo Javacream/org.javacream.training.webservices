@@ -37,7 +37,7 @@ public class StoreServiceImpl implements StoreService{
 	public void remove(String category, String id) {
 		Map<String, Integer> ids = stockMap.get(category);
 		if (ids != null) {
-			stockMap.remove(id);
+			ids.remove(id);
 		}
 	}
 	@Override
