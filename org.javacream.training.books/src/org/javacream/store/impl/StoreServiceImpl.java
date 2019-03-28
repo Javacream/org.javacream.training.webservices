@@ -18,7 +18,7 @@ public class StoreServiceImpl implements StoreService{
 			return 0;
 		}
 		Integer stock = ids.get(id);
-		if (id == null) {
+		if (stock == null) {
 			return 0;
 		}
 		return stock;
