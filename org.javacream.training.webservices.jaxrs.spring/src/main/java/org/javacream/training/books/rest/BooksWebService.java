@@ -28,7 +28,7 @@ public class BooksWebService {
 	private BooksService booksService = Context.getBooksService();
 	
 	
-	@ApiOperation("findBookByIsbn") @GET @Path("{isbn}") @Produces({MediaType.TEXT_PLAIN, "text/simple"})
+	@GET @Path("{isbn}") @Produces({MediaType.TEXT_PLAIN, "text/simple"})
 	public WebBook findBookByIsbn(@PathParam ("isbn")String isbn){
 		try{
 			return assemble(booksService.findBookByIsbn(isbn));

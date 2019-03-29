@@ -12,8 +12,11 @@ import org.javacream.application.Context;
 import org.javacream.store.api.StoreService;
 import org.springframework.stereotype.Component;
 
+import io.swagger.annotations.Api;
+
 @Component
 @Path("store")
+@Api
 public class StoreWebService {
 
 	private StoreService storeService = Context.getStoreService();

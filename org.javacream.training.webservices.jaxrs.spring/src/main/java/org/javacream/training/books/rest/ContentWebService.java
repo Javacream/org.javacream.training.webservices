@@ -9,8 +9,11 @@ import org.javacream.application.Context;
 import org.javacream.books.warehouse.api.BooksService;
 import org.springframework.stereotype.Component;
 
+import io.swagger.annotations.Api;
+
 @Component
 @Path("content")
+@Api
 public class ContentWebService {
 
 	private BooksService booksService = Context.getBooksService();

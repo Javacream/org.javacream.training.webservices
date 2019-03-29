@@ -21,10 +21,6 @@ public class CombinedResourceProvider implements SwaggerResourcesProvider {
     @Autowired
     private InMemorySwaggerResourcesProvider inMemorySwaggerResourcesProvider;
 
-    @PostConstruct public void init() {
-
-    	System.out.println("inin");
-    }
     public List<SwaggerResource> get() {
 
         SwaggerResource jerseySwaggerResource = new SwaggerResource();

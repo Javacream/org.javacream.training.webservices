@@ -6,8 +6,11 @@ import javax.ws.rs.Path;
 import org.javacream.application.Context;
 import org.springframework.stereotype.Component;
 
+import io.swagger.annotations.Api;
+
 @Component
 @Path("books")
+@Api
 public class IsbnGeneratorWebService {
 
 	
