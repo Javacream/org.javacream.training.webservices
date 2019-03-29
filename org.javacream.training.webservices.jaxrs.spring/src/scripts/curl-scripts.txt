@@ -1,30 +1,30 @@
 # IsbnGenerator
-curl -X POST -H "Accept: *" -verbose http://localnost:8080/books/isbn
+curl -X POST -H "Accept: *" -verbose http://localhost:8080/api/books/isbn
 
 
 # StoreService
-curl -X POST -H "stock: 10" http://localhost:8080/store/books/ISBN1
-curl -X POST -H "stock: 42" http://localhost:8080/store/books/ISBN2
-curl -X POST -H "stock: 1" http://localhost:8080/store/dvd/StarTrek
+curl -X POST -H "stock: 10" http://localhost:8080/api/store/books/ISBN1
+curl -X POST -H "stock: 42" http://localhost:8080/api/store/books/ISBN2
+curl -X POST -H "stock: 1" http://localhost:8080/api/store/dvd/StarTrek
 
 
-curl -X GET http://localhost:8080/store/books/ISBN1
-curl -X GET http://localhost:8080/store/dvd/StarTrek
-curl -X GET "http://localhost:8080/store/query?category=dvd&itemId=StarTrek"
-curl -X GET -H "category: dvd" -H "itemId: StarTrek" "http://localhost:8080/store/header"
+curl -X GET http://localhost:8080/api/store/books/ISBN1
+curl -X GET http://localhost:8080/api/store/dvd/StarTrek
+curl -X GET "http://localhost:8080/api/store/query?category=dvd&itemId=StarTrek"
+curl -X GET -H "category: dvd" -H "itemId: StarTrek" "http://localhost:8080/api/store/header"
 
-curl -X DELETE http://localhost:8080/store/dvd/StarTrek
-curl -X DELETE http://localhost:8080/store/books
-curl -X DELETE http://localhost:8080/store
+curl -X DELETE http://localhost:8080/api/store/dvd/StarTrek
+curl -X DELETE http://localhost:8080/api/store/books
+curl -X DELETE http://localhost:8080/api/store
 
 # Books
 
-curl -X POST http://localhost:8080/books/Spring
-curl -X POST http://localhost:8080/books/JEE
+curl -X POST http://localhost:8080/api/books/Spring
+curl -X POST http://localhost:8080/api/books/JEE
 
-curl -X GET http://localhost:8080/books
-curl -X DELETE http://localhost:8080/books/ISBN1
+curl -X GET http://localhost:8080/api/books
+curl -X DELETE http://localhost:8080/api/books/ISBN1
 
-curl -X PUT -H "Content-Type: application/json" -d@update.json http://localhost:8080/books/ISBN2
+curl -X PUT -H "Content-Type: application/json" -d@update.json http://localhost:8080/api/books/ISBN2
 
-curl -X GET http://localhost:8080/content/ISBN1
+curl -X GET http://localhost:8080/api/content/ISBN1
