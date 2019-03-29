@@ -30,12 +30,11 @@ public class SwaggerConfig {
 		Collection<VendorExtension> vendorExtensions = new ArrayList<>();
 		vendorExtensions.add(vendorExtension);
 
-		Contact contactInfo = new Contact("AtechRef", "www.atechref.com", "atechsoft@gmail.com");
+		Contact contactInfo = new Contact("Javacream", "javacream.org", "training@rainer-sawitzki.de");
 
 		return new ApiInfo("SpringBoot-Swagger2-JaxRS",
-				"Example project showing how to integrate spring boot "
-						+ "web app using jaxrs instead of springmvc with swagger and springfox.",
-				"1.0", "For Demo only", contactInfo, "Apache 2.0", "www.apache.org", vendorExtensions);
+				"Spring ,Boot, JAXRS and Swagger",
+				"1.0", "Training", contactInfo, "Apache 2.0", "www.apache.org", vendorExtensions);
 	}
 
 }
