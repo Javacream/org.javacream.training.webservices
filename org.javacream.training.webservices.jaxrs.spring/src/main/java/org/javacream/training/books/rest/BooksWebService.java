@@ -19,12 +19,16 @@ import org.javacream.books.warehouse.api.Book;
 import org.javacream.books.warehouse.api.BookException;
 import org.javacream.books.warehouse.api.BooksService;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+
 @Path("books")
+@Api
 public class BooksWebService {
 	private BooksService booksService = Context.getBooksService();
 	
 	
-	@GET @Path("{isbn}") @Produces({MediaType.TEXT_PLAIN, "text/simple"})
+	@ApiOperation("findBookByIsbn") @GET @Path("{isbn}") @Produces({MediaType.TEXT_PLAIN, "text/simple"})
 	public WebBook findBookByIsbn(@PathParam ("isbn")String isbn){
 		try{
 			return assemble(booksService.findBookByIsbn(isbn));
