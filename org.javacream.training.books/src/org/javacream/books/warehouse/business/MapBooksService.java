@@ -28,7 +28,6 @@ public class MapBooksService implements BooksService {
 	private StoreService storeService;
 	
 	{
-		System.out.println("Initializing books map");
 		books = new HashMap<String, Book>();
 		boolean available = true;
 		List<String> keywords = Arrays.asList(new String[]{"sports", "politics"});
