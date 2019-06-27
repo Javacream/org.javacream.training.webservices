@@ -5,11 +5,14 @@ import javax.ws.rs.Path;
 
 import org.springframework.stereotype.Component;
 
-@Path("api")
 @Component
+@Path("api")
 public class Echo {
 
-	@GET @Path("echo") public String echo() {
-		return "Ping";		
+	@GET
+	@Path("echo")
+	public String echo() {
+		return "Ping";
+
 	}
 }
