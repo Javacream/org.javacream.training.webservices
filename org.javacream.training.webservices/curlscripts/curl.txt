@@ -1,0 +1,29 @@
+curl -X GET -v http://localhost:8080/api/store/books/ISBN1
+curl -X GET -v "http://localhost:8080/api/store/query?cat=books&id=0815"
+curl -X GET -H "CATEGORY: BOOKS" -H "ID: 4711" -v "http://localhost:8080/api/store/header"
+curl -X GET -H "ID: 4711" -v "http://localhost:8080/api/store/books"
+
+
+# IsbnGenerator
+curl -X POST -H "Accept: *" -verbose http://localhost:8080/api/books/isbn
+
+curl -X GET http://localhost:8080/api/store/books/ISBN1
+curl -X GET http://localhost:8080/api/store/dvd/StarTrek
+curl -X GET "http://localhost:8080/api/store/query?category=dvd&itemId=StarTrek"
+curl -X GET -H "category: dvd" -H "itemId: StarTrek" "http://localhost:8080/api/store/header"
+
+curl -X DELETE http://localhost:8080/api/store/dvd/StarTrek
+curl -X DELETE http://localhost:8080/api/store/books
+curl -X DELETE http://localhost:8080/api/store
+
+# Books
+
+curl -X POST http://localhost:8080/api/books/Spring
+curl -X POST http://localhost:8080/api/books/JEE
+
+curl -X GET http://localhost:8080/api/books
+curl -X DELETE http://localhost:8080/api/books/ISBN1
+
+curl -X PUT -H "Content-Type: application/json" -d@update.json http://localhost:8080/api/books/ISBN2
+
+curl -X GET http://localhost:8080/api/content/ISBN1
