@@ -17,3 +17,14 @@ curl -X GET http://localhost:8080/api/store/books/ISBN1
 curl -X GET http://localhost:8080/api/store/dvd/StarTrek
 curl -X GET "http://localhost:8080/api/store/query?category=dvd&item=StarTrek"
 curl -X GET -H "CATEGORY: dvd" -H "ID: StarTrek" "http://localhost:8080/api/store/header"
+
+
+# Books
+
+curl -X POST http://localhost:8080/api/books/Spring
+curl -X POST http://localhost:8080/api/books/JEE
+
+curl -X GET http://localhost:8080/api/books/ISBN1
+curl -X DELETE http://localhost:8080/api/books/ISBN1
+
+curl -X PUT -H "Content-Type: application/json" -d@update.json http://localhost:8080/api/books/ISBN2
