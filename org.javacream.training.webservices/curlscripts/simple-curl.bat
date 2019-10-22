@@ -35,3 +35,9 @@ curl -X PUT -H "Content-Type: application/json" -d@update.json http://localhost:
 # OptimizedStore
 
 curl -X PUT -H "Content-Type: application/json" -d@storeRequest.json http://localhost:8080/api/store/books
+
+# NonTrivialBooksWebService
+
+curl -X GET http://localhost:8080/api/books/nontrivial
+curl -X GET http://localhost:8080/api/books/nontrivial?maxSize=3
+curl -X GET http://localhost:8080/api/books/nontrivial/ISBN1
