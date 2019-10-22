@@ -28,3 +28,10 @@ curl -X GET http://localhost:8080/api/books/ISBN1
 curl -X DELETE http://localhost:8080/api/books/ISBN1
 
 curl -X PUT -H "Content-Type: application/json" -d@update.json http://localhost:8080/api/books/ISBN2
+
+# IdGenerator
+
+
+# OptimizedStore
+
+curl -X PUT -H "Content-Type: application/json" -d@storeRequest.json http://localhost:8080/api/store/books

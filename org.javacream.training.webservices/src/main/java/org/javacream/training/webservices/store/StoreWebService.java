@@ -11,7 +11,7 @@ import org.javacream.util.ApplicationContext;
 import org.springframework.stereotype.Component;
 
 @Component
-@Path("api")
+@Path("api/demo")
 public class StoreWebService {
 
 	private StoreService storeService = new LoggingStoreService(ApplicationContext.getStoreService());
