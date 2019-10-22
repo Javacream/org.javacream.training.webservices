@@ -35,7 +35,7 @@ curl -X POST http://localhost:8080/api/id
 
 # OptimizedStore
 
-curl -X PUT -H "Content-Type: application/json" -d@storeRequest.json http://localhost:8080/api/store/books
+curl -X POST -H "Content-Type: application/json" -d@storeRequest.json http://localhost:8080/api/store/books
 
 # NonTrivialBooksWebService
 
