@@ -23,7 +23,7 @@ public class NonTrivialBooksWebService {
 
 	@GET
 	@Path("{isbn}")
-	@Produces(MediaType.APPLICATION_JSON)
+	@Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML, MediaType.TEXT_PLAIN})
 	public WebBook findBookByIsbn(@PathParam("isbn") String isbn) {
 		try {
 			return assemble(booksService.findBookByIsbn(isbn));
@@ -31,6 +31,17 @@ public class NonTrivialBooksWebService {
 			throw new NotFoundException(be);
 		}
 	}
+//	@GET
+//	@Path("{isbn}")
+//	@Produces(MediaType.TEXT_PLAIN)
+//	public String findBookByIsbnAsString(@PathParam("isbn") String isbn) {
+//		try {
+//			return assemble(booksService.findBookByIsbn(isbn)).toString();
+//		} catch (BookException be) {
+//			throw new NotFoundException(be);
+//		}
+//	}
+
 
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
