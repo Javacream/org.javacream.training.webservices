@@ -31,6 +31,7 @@ curl -X PUT -H "Content-Type: application/json" -d@update.json http://localhost:
 
 # IdGenerator
 
+curl -X POST http://localhost:8080/api/id
 
 # OptimizedStore
 
