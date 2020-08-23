@@ -9,14 +9,14 @@ import org.javacream.isbngenerator.business.RandomIsbnGenerator;
 import org.javacream.store.StoreService;
 import org.javacream.store.business.StoreServiceImpl;
 
-public abstract class Context {
+public abstract class ApplicationContext {
 	public static BooksService getBooksService(){
 		MapBooksService mapBooksService = new MapBooksService();
-		mapBooksService.setIsbnGenerator(getKeyGenerator());
+		mapBooksService.setIsbnGenerator(getIsbnGenerator());
 		mapBooksService.setStoreService(getStoreService());
 		return mapBooksService;
 	}
-	public static IsbnGenerator getKeyGenerator(){
+	public static IsbnGenerator getIsbnGenerator(){
 		RandomIsbnGenerator randomKeyGenerator = new RandomIsbnGenerator();
 		randomKeyGenerator.setPrefix("Integrata:");
 		randomKeyGenerator.setSuffix("-de");
