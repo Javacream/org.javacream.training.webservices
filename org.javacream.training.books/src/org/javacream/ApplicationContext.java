@@ -19,9 +19,13 @@ public abstract class ApplicationContext {
 		MapBooksService mapBooksService = new MapBooksService();
 		RandomIsbnGenerator randomIsbnGenerator = new RandomIsbnGenerator();
 		mapBooksService.setIsbnGenerator(randomIsbnGenerator);
-		mapBooksService.setStoreService(new StoreServiceImpl());
+		StoreService simpleStoreService = new StoreServiceImpl();
+		mapBooksService.setStoreService(simpleStoreService);
 		randomIsbnGenerator.setPrefix("Integrata:");
 		randomIsbnGenerator.setSuffix("-de");
+		booksService = mapBooksService;
+		storeService = simpleStoreService;
+		isbnGenerator = randomIsbnGenerator;
 	}
 	public static IsbnGenerator getIsbnGenerator(){
 		return isbnGenerator;
