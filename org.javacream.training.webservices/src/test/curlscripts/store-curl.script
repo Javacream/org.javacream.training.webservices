@@ -1,0 +1,2 @@
+curl -verbose -X POST -H "Accept: text/plain" http://localhost:8080/api/isbn
+curl -verbose -X POST -H "Accept: text/html" http://localhost:8080/api/isbn
