@@ -1,4 +1,4 @@
-package org.javacream.training.webservices;
+package org.javacream.training.webservices.demo.greeter;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
