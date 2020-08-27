@@ -1,0 +1,3 @@
+curl -verbose -X GET http://localhost:8080/api/greeter/Sawitzki
+curl -verbose -X GET http://localhost:8080/api/greeter?name=Sawitzki
+curl -verbose -X GET -H "name: Sawitzki" http://localhost:8080/api/greeter/header

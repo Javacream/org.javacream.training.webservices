@@ -1,6 +1,7 @@
 package org.javacream.training.webservices.demo.greeter;
 
 import javax.ws.rs.GET;
+import javax.ws.rs.HeaderParam;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -24,6 +25,12 @@ public class Greeter {
 	@GET
 	@Produces("text/plain")
 	public String greetWithQueryParam(@QueryParam("name") String personName) {
+		return "Hello " + personName;
+	}
+	@GET
+	@Produces("text/plain")
+	@Path("header")
+	public String greetWithHeaderParam(@HeaderParam("name") String personName) {
 		return "Hello " + personName;
 	}
 

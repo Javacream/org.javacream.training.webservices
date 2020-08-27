@@ -6,6 +6,6 @@ import org.springframework.stereotype.Component;
 @Component
 public class JerseyConfig extends ResourceConfig{
 	public JerseyConfig() {
-		packages("org.javacream.training.webservices");
+		packages("org.javacream");
 	}
 }
