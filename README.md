@@ -12,8 +12,8 @@
 * Seminarzeiten
   * 8 Unterrichtseinheiten mit jeweils 90 Minuten
   * Mittagspause 45 Minuten (12:15-13:00)
-  * Kaffeepausen Vormittags/Nachmittags 15 Minuten (10:30 und 14:30)
+  * Kaffeepausen Vormittags/Nachmittags 10 Minuten
   * Zeitplan 
-    * Do.:        9:00 - 16:15
-    * Fr.:        9:00 - 16:15
+    * Do.:        10:00 - 16:45
+    * Fr.:         9:00 - 16:15
     
