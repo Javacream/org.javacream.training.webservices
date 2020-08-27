@@ -17,3 +17,14 @@
     * Do.:        10:00 - 16:45
     * Fr.:         9:00 - 16:15
     
+## Teilnehmerzuordnung auf RDWeb Sessions
+
+1. Fabian Naaß
+1. Jianchun Wang
+1. Sebastian Eichhorst
+1. Michael König
+1. Sabrina Hoffmann
+1. Oleksandr Voskoboinyk
+
+  
+    
