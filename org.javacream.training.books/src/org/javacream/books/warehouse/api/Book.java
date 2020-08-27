@@ -5,8 +5,6 @@ import java.util.List;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
@@ -16,8 +14,7 @@ public class Book implements Serializable {
 		super();
 	}
 
-	public Book(String isbn, String title, double price, boolean available,
-			List<String> keywords) {
+	public Book(String isbn, String title, double price, boolean available, List<String> keywords) {
 		super();
 		this.isbn = isbn;
 		this.title = title;
@@ -28,23 +25,20 @@ public class Book implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	@XmlAttribute(name="bookIsbnNumber")
 	private String isbn;
 
-	@XmlElement(name="titleOfBook")
 	private String title;
 
 	private double price;
 
-	@XmlAttribute
 	private boolean available;
 
 	private List<String> keywords;
-	
+
 	public List<String> getKeywords() {
 		return keywords;
 	}
-	
+
 	private byte[] content;
 
 	public byte[] getContent() {
@@ -91,8 +85,7 @@ public class Book implements Serializable {
 				return false;
 		} else if (!isbn.equals(other.isbn))
 			return false;
-		if (Double.doubleToLongBits(price) != Double
-				.doubleToLongBits(other.price))
+		if (Double.doubleToLongBits(price) != Double.doubleToLongBits(other.price))
 			return false;
 		if (title == null) {
 			if (other.title != null)
@@ -117,11 +110,9 @@ public class Book implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Book [available=" + available + ", isbn=" + isbn
-				+ ", keywords=" + keywords + ", price=" + price + ", title="
-				+ title + ", toString()=" + super.toString() + "]";
+		return "Book [available=" + available + ", isbn=" + isbn + ", keywords=" + keywords + ", price=" + price
+				+ ", title=" + title + ", toString()=" + super.toString() + "]";
 	}
-
 
 	public double getPrice() {
 		return price;
@@ -138,6 +129,5 @@ public class Book implements Serializable {
 	public void setAvailable(boolean available) {
 		this.available = available;
 	}
-	
 
 }
