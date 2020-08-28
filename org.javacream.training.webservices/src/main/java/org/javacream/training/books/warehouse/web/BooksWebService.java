@@ -16,11 +16,7 @@ import org.javacream.ApplicationContext;
 import org.javacream.books.warehouse.api.Book;
 import org.javacream.books.warehouse.api.BookException;
 import org.javacream.books.warehouse.api.BooksService;
-import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
 
-@Component
-@Scope("singleton")
 @Path("api/books")
 public class BooksWebService {
 	private BooksService booksService = ApplicationContext.getBooksService();

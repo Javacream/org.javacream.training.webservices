@@ -17,12 +17,12 @@ import org.javacream.books.warehouse.api.Book;
 import org.javacream.books.warehouse.api.BookException;
 import org.javacream.books.warehouse.api.BooksService;
 
-@Path("api/books/nontrivial")
+@Path("api/books")
 public class BooksWebServiceFacade {
 	private BooksService booksService = ApplicationContext.getBooksService();
 
 	@GET
-	@Path("{isbn}")
+	@Path("compact-{isbn}")
 	@Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML, MediaType.TEXT_PLAIN})
 	public WebBook findBookByIsbn(@PathParam("isbn") String isbn) {
 		try {
@@ -33,6 +33,7 @@ public class BooksWebServiceFacade {
 	}
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
+	@Path("isbns")
 	public Collection<String> findAllIsbns(@QueryParam("maxSize") @DefaultValue("-1") Integer maxSize) {
 		try {
 			if (maxSize == -1) {
@@ -49,8 +50,7 @@ public class BooksWebServiceFacade {
 	}
 
 	private WebBook assemble(Book book) {
-		return new WebBook(book.getIsbn(), book.getTitle(), book.getPrice(), book.isAvailable(),
-				book.getKeywords().toString());
+		return new WebBook(book.getTitle(), book.getPrice(), book.isAvailable());
 	}
 
 }

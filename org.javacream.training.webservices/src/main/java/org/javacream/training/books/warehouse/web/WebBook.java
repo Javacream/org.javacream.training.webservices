@@ -9,35 +9,57 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class WebBook {
 
 	
-	private String isbn;
 	private String title;
 	private double price;
-	private String keywords;
 	private boolean available;
-	public String getIsbn() {
-		return isbn;
-	}
 	public String getTitle() {
 		return title;
 	}
 	public double getPrice() {
 		return price;
 	}
-	public WebBook() {
-		super();
+	public boolean isAvailable() {
+		return available;
 	}
-	public WebBook(String isbn, String title, double price, boolean available, String keywords) {
+	public WebBook(String title, double price, boolean available) {
 		super();
-		this.isbn = isbn;
 		this.title = title;
 		this.price = price;
 		this.available = available;
-		this.keywords = keywords;
 	}
-	public String getKeywords() {
-		return keywords;
+	@Override
+	public String toString() {
+		return "WebBook [title=" + title + ", price=" + price + ", available=" + available + "]";
 	}
-	public boolean isAvailable() {
-		return available;
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + (available ? 1231 : 1237);
+		long temp;
+		temp = Double.doubleToLongBits(price);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		result = prime * result + ((title == null) ? 0 : title.hashCode());
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		WebBook other = (WebBook) obj;
+		if (available != other.available)
+			return false;
+		if (Double.doubleToLongBits(price) != Double.doubleToLongBits(other.price))
+			return false;
+		if (title == null) {
+			if (other.title != null)
+				return false;
+		} else if (!title.equals(other.title))
+			return false;
+		return true;
 	}
 }
