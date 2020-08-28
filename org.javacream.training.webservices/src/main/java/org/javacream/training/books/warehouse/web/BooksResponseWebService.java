@@ -26,9 +26,7 @@ import org.javacream.ApplicationContext;
 import org.javacream.books.warehouse.api.Book;
 import org.javacream.books.warehouse.api.BookException;
 import org.javacream.books.warehouse.api.BooksService;
-import org.springframework.stereotype.Component;
 
-@Component
 @Path("api/books2")
 public class BooksResponseWebService {
 
