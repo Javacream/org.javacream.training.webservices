@@ -3,14 +3,6 @@ package org.javacream.books.warehouse.api;
 import java.io.Serializable;
 import java.util.List;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-
-@XmlRootElement
-@XmlAccessorType(XmlAccessType.FIELD)
 public class Book implements Serializable {
 	public Book() {
 		super();
@@ -28,15 +20,12 @@ public class Book implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	@XmlAttribute(name="bookIsbnNumber")
 	private String isbn;
 
-	@XmlElement(name="titleOfBook")
 	private String title;
 
 	private double price;
 
-	@XmlAttribute
 	private boolean available;
 
 	private List<String> keywords;
