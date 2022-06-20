@@ -2,7 +2,7 @@
 
 * Referent: Rainer Sawitzki, eMail: training@rainer-sawitzki.de
 
-* Beispiele
+* Beispiel unter
   * https://github.com/Javacream/org.javacream.training.webervices
     *  Branch integrata_22.6.2022
 * Digitales Flipchart
