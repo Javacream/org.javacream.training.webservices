@@ -35,7 +35,7 @@ public class EchoWebService {
 	public ResponseEntity<String> alternativePing() {
 		return ResponseEntity.ok().header("this", "that").body("pong");
 	}
-	@GetMapping(path = "alternative_ping")
+	@GetMapping(path = "alternative2_ping")
 	public void alternative2Ping(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		request.getParameter("HUGO");
 		response.setHeader("this", "that");
@@ -43,4 +43,10 @@ public class EchoWebService {
 		response.getWriter().println("pong");
 	}
 
+	@GetMapping(path = "ping", produces = "javacream/hugo")
+	public String pingWithCustomMediatType() {
+		return "pong";
+	}
+
+	
 }

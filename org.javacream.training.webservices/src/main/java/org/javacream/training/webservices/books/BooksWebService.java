@@ -50,7 +50,7 @@ public class BooksWebService {
 
 	}
 
-	@GetMapping(path = "api/books/{isbn}", produces = MediaType.APPLICATION_JSON_VALUE)
+	@GetMapping(path = "api/books/{isbn}", produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE, MediaType.TEXT_PLAIN_VALUE})
 	public Book findBookByIsbn(@PathVariable("isbn") String isbn) {
 		try {
 			return booksService.findBookByIsbn(isbn);
