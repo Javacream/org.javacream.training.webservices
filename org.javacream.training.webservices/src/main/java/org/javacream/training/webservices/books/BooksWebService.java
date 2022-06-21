@@ -90,7 +90,7 @@ public class BooksWebService {
 //		}
 //	}
 	
-	@PutMapping(path = "api/books/{isbn}", consumes = MediaType.APPLICATION_JSON_VALUE)
+	@PutMapping(path = "api/books/{isbn}")
 	public void updatePrice(@PathVariable("isbn") String isbn, @RequestParam("price") Double newPrice){
 		try {
 			Book toUpdate = booksService.findBookByIsbn(isbn);
