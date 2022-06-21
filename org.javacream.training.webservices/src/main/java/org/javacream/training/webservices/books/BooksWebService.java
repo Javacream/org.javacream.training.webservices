@@ -6,12 +6,15 @@ import org.javacream.books.warehouse.BookException;
 import org.javacream.books.warehouse.BooksService;
 import org.javacream.books.warehouse.value.Book;
 import org.javacream.util.ApplicationContext;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class BooksWebService {
 	private BooksService booksService = ApplicationContext.getBooksService();
 
+	@GetMapping(path="api/books", produces = MediaType.APPLICATION_JSON_VALUE)
 	public Collection<Book> findAllBooks() {
 		return booksService.findAllBooks();
 	}
