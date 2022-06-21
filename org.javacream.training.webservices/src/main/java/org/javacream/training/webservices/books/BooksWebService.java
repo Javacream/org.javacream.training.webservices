@@ -1,6 +1,7 @@
 package org.javacream.training.webservices.books;
 
 import java.util.Collection;
+import java.util.stream.Collectors;
 
 import org.javacream.books.warehouse.BookException;
 import org.javacream.books.warehouse.BooksService;
@@ -14,11 +15,21 @@ import org.springframework.web.bind.annotation.RestController;
 public class BooksWebService {
 	private BooksService booksService = ApplicationContext.getBooksService();
 
-	@GetMapping(path="api/books", produces = MediaType.APPLICATION_JSON_VALUE)
-	public Collection<Book> findAllBooks() {
-		return booksService.findAllBooks();
+//	@GetMapping(path="api/books", produces = MediaType.APPLICATION_JSON_VALUE)
+//	public Collection<Book> findAllBooks() {
+//		return booksService.findAllBooks();
+//	}
+
+	@GetMapping(path="api/books/isbns", produces = MediaType.APPLICATION_JSON_VALUE)
+	public Collection<String> findAllIsbns() {
+		return booksService.findAllBooks().stream().map((book) -> book.getIsbn()).collect(Collectors.toList());
+	}
+	@GetMapping(path="api/books/infos", produces = MediaType.APPLICATION_JSON_VALUE)
+	public Collection<BookInfo> findAllBookInfos() {
+		return booksService.findAllBooks().stream().map((book) -> new BookInfo(book.getIsbn(), book.getTitle())).collect(Collectors.toList());
 	}
 
+	
 //später...	
 	public void deleteBookByIsbn(String arg0) throws BookException {
 		booksService.deleteBookByIsbn(arg0);
