@@ -3,6 +3,7 @@ package org.javacream.training.webservices;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -18,4 +19,10 @@ public class EchoWebService {
 		System.out.println("receiving message "+ message);
 		return message;
 	}
+
+	@PostMapping(path="greet/{name}", produces = MediaType.TEXT_PLAIN_VALUE)
+	public String greet(@PathVariable("name") String name) {
+		return "Hello " + name;
+	}
+
 }

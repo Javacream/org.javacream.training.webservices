@@ -19,7 +19,7 @@ public class StoreWebService {
 //	}
 
 	@GetMapping(path="api/store", produces = MediaType.TEXT_PLAIN_VALUE)
-	public String getStock(@RequestHeader("cat") String category, @RequestParam("item") String item) {
+	public String getStock(@RequestParam("cat") String category, @RequestHeader("item") String item) {
 		return "Stock: " + storeService.getStock(category, item);
 	}
 
