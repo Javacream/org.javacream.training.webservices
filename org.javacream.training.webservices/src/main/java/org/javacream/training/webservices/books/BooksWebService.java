@@ -13,7 +13,10 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
@@ -65,6 +68,40 @@ public class BooksWebService {
 		}
 	}
 
+//	@PutMapping(path = "api/books", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+//	public Book updateBook(@RequestBody Book book) throws BookException {
+//		return booksService.updateBook(book);
+//	}
+
+	@PutMapping(path = "api/books", consumes = MediaType.APPLICATION_JSON_VALUE)
+	public void updateBook(@RequestBody Book book){
+		try {
+			booksService.updateBook(book);
+		} catch (BookException e) {
+			throw new ResponseStatusException(HttpStatus.UNPROCESSABLE_ENTITY);
+		}
+	}
+//	@PutMapping(path = "api/books", consumes = MediaType.APPLICATION_JSON_VALUE)
+//	public void updateBook(@RequestBody Map<String, Object> changes){
+//		try {
+//			//booksService.updateBook(book);
+//		} catch (BookException e) {
+//			throw new ResponseStatusException(HttpStatus.UNPROCESSABLE_ENTITY);
+//		}
+//	}
+	
+	@PutMapping(path = "api/books/{isbn}", consumes = MediaType.APPLICATION_JSON_VALUE)
+	public void updatePrice(@PathVariable("isbn") String isbn, @RequestParam("price") Double newPrice){
+		try {
+			Book toUpdate = booksService.findBookByIsbn(isbn);
+			toUpdate.setPrice(newPrice);
+			booksService.updateBook(toUpdate);
+		} catch (BookException e) {
+			throw new ResponseStatusException(HttpStatus.UNPROCESSABLE_ENTITY);
+		}
+	}
+
+
 //später...	
 
 	public Book findBook(String arg0, boolean arg1) throws BookException {
@@ -73,10 +110,6 @@ public class BooksWebService {
 
 	public Book findBook(String arg0) throws BookException {
 		return booksService.findBook(arg0);
-	}
-
-	public Book updateBook(Book arg0) throws BookException {
-		return booksService.updateBook(arg0);
 	}
 
 }
